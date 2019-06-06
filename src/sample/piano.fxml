@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="720.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane layoutY="30.0" prefHeight="123.0" prefWidth="720.0" style="-fx-background-color: #D2B48C;">
+         <items>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="VirtualPiano" textAlignment="CENTER" wrappingWidth="715.6708984375">
+               <font>
+                  <Font name="Dubai Regular" size="39.0" />
+               </font>
+            </Text>
+         </items>
+      </SplitPane>
+      <Button alignment="BOTTOM_CENTER" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="Z">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="288.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="B">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="360.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="A">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="432.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="S">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="504.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="D">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="576.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="F">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="648.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="G">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="144.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="C">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="72.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="X">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" layoutX="216.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="V">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="46.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="Q" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="622.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="H" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="550.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="Y" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="118.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="60.0" style="-fx-background-color: #000000;" text="W" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="262.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="E" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="R" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="406.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="T" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
