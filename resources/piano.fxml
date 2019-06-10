@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:controller="sample.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1296.0" style="-fx-background-color: #AFEEEE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="1296.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="Z" alignment="BOTTOM_CENTER" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="Z">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="B" alignment="BOTTOM_CENTER" layoutX="288.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="B">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="N" alignment="BOTTOM_CENTER" layoutX="360.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="N">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="M" alignment="BOTTOM_CENTER" layoutX="432.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="M">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="L" alignment="BOTTOM_CENTER" layoutX="504.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="L">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="K" alignment="BOTTOM_CENTER" layoutX="576.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="K">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="J" alignment="BOTTOM_CENTER" layoutX="648.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="J">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="C" alignment="BOTTOM_CENTER" layoutX="144.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="C">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="X" alignment="BOTTOM_CENTER" layoutX="72.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="X">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button  fx:id="V" alignment="BOTTOM_CENTER" layoutX="216.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="V">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="E" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="46.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="E" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A1" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="622.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="1" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="P" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="550.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="P" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="R" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="118.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="R" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="T" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="190.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="T" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="Y" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="262.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="Y" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="U" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="334.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="U" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="H" alignment="BOTTOM_CENTER" layoutX="720.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="H">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="A" alignment="BOTTOM_CENTER" layoutX="1080.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="A">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="S" alignment="BOTTOM_CENTER" layoutX="1008.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="S">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="D" alignment="BOTTOM_CENTER" layoutX="936.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="D">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="F" alignment="BOTTOM_CENTER" layoutX="864.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="F">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="G" alignment="BOTTOM_CENTER" layoutX="792.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="G">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="W" alignment="BOTTOM_CENTER" layoutX="1225.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="W">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="Q" alignment="BOTTOM_CENTER" layoutX="1152.0" layoutY="153.0" mnemonicParsing="false" prefHeight="477.0" prefWidth="72.0" text="Q">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button fx:id="I" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="406.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="I" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="O" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="478.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="O" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A2" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="694.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="2" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="766.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="3" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="838.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="4" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="910.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="5" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A6" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="982.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="6" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A7" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="1054.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="7" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A8" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="1126.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="8" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="A9" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="1198.0" layoutY="153.0" mnemonicParsing="false" prefHeight="274.0" prefWidth="53.0" style="-fx-background-color: #000000;" text="9" textFill="#f8f6f6">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id ="train" layoutX="1054.0" layoutY="58.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="217.0" text="Train">
+         <font>
+            <Font name="Century" size="27.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelTrain" layoutX="43.0" layoutY="44.0" prefHeight="94.0" prefWidth="922.0" style="-fx-background-color: #ADD8E6;" />
+   </children>
+</Pane>

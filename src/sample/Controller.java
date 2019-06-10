@@ -1,9 +1,7 @@
 package sample;
 
-
-
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,13 +10,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-import java.awt.event.ActionEvent;
+
+
 import java.io.*;
 import java.net.URL;
 import java.util.*;
 
 
-public class Controller<event> {
+public class Controller {
+
     @FXML
     private ResourceBundle resources;
 
@@ -56,7 +56,7 @@ public class Controller<event> {
     private Button file_button;
 
     @FXML
-    private Button Train;
+    private Button train;
 
     @FXML
     private Button F;
@@ -88,22 +88,86 @@ public class Controller<event> {
     @FXML
     private Button H;
 
+    @FXML
+    private Label labelTrain;
 
     @FXML
     private TextField fileField;
 
-
     @FXML
     private Label error_label;
 
-    private boolean isTrainingMode = false;
+    private boolean isTrain = false;
+    private Trainer coach = new Trainer();
 
-    private int noteCounter = 0;
+    @FXML
+    public void checkKey(char key) {
+        coach.checkKey(key);
+        switch (coach.getStatus()) {
+            case FAULT:
+                labelTrain.setText("FAULT");
+                coach.reset();
+                break;
+            case SUCCESS:
+                labelTrain.setText("OK");
+                coach.reset();
+                break;
+        }
+    }
 
-    private String noteLine = "";
+    @FXML
+    public void initialize() {
+        Z.setOnAction(event -> {
+            pressNote("resources/music/Z.wav");
+            if (isTrain) {
+                checkKey('Z');
+            }
+        });
+        X.setOnAction(event -> {
+            pressNote("resources/music/X.wav");
+            if (isTrain) {
+                checkKey('X');
+            }
+        });
+        C.setOnAction(event -> {
+            pressNote("resources/music/C.wav");
+            if (isTrain) {
+                checkKey('C');
+            }
+        });
+        V.setOnAction(event -> {
+            pressNote("resources/music/V.wav");
+            if (isTrain) {
+                checkKey('V');
+            }
+        });
+        B.setOnAction(event -> {
+            pressNote("resources/music/B.wav");
+            if (isTrain) {
+                checkKey('B');
+            }
+        });;
+        A.setOnAction(event -> pressNote("resources/music/A.wav"));
+        S.setOnAction(event -> pressNote("resources/music/S.wav"));
+        D.setOnAction(event -> pressNote("resources/music/D.wav"));
+        F.setOnAction(event -> pressNote("resources/music/F.wav"));
+        G.setOnAction(event -> pressNote("resources/music/G.wav"));
+        Q.setOnAction(event -> pressNote("resources/music/Q.wav"));
+        W.setOnAction(event -> pressNote("resources/music/W.wav"));
+        E.setOnAction(event -> pressNote("resources/music/E.wav"));
+        R.setOnAction(event -> pressNote("resources/music/R.wav"));
+        T.setOnAction(event -> pressNote("resources/music/T.wav"));
+        Y.setOnAction(event -> pressNote("resources/music/Y.wav"));
+        train.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            labelTrain.setText(coach.getSeq());
+            isTrain = true;
+        });
+
+    }
 
 
-    public void pressNote(String file) {
+
+public void pressNote(String file) {
         Media music = new Media(new File(file).toURI().toString());
         MediaPlayer player = new MediaPlayer(music);
         player.play();
@@ -122,87 +186,70 @@ public class Controller<event> {
             for (String i : scanner.nextLine().split(" ")) {
                 switch (i) {
                     case "z":
-                        checkIfTraining(i);
                         Z.fire();
                         break;
 
                     case "x":
-                        checkIfTraining(i);
                         X.fire();
                         break;
 
                     case "c":
-                        checkIfTraining(i);
                         C.fire();
                         break;
 
                     case "v":
-                        checkIfTraining(i);
                         V.fire();
                         break;
 
                     case "b":
-                        checkIfTraining(i);
                         B.fire();
                         break;
 
                     case "a":
-                        checkIfTraining(i);
                         A.fire();
                         break;
 
                     case "s":
-                        checkIfTraining(i);
                         S.fire();
                         break;
 
                     case "d":
-                        checkIfTraining(i);
                         D.fire();
                         break;
 
                     case "f":
-                        checkIfTraining(i);
                         F.fire();
                         break;
 
                     case "g":
-                        checkIfTraining(i);
                         G.fire();
                         break;
 
                     case "q":
-                        checkIfTraining(i);
                         Q.fire();
                         break;
 
                     case "w":
-                        checkIfTraining(i);
                         W.fire();
                         break;
 
                     case "e":
-                        checkIfTraining(i);
                         E.fire();
                         break;
 
                     case "r":
-                        checkIfTraining(i);
                         R.fire();
                         break;
 
                     case "t":
-                        checkIfTraining(i);
                         T.fire();
                         break;
 
                     case "y":
-                        checkIfTraining(i);
                         Y.fire();
                         break;
 
                     case "h":
-                        checkIfTraining(i);
                         H.fire();
                         break;
 
@@ -212,106 +259,12 @@ public class Controller<event> {
             }
         }
         fileReader.close();
-        Train.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
-                Notes.setText(str.toString());
-            }
-        });
 
     }
 
 
-    @FXML
-    private void checkIfTraining(String i) {
-        startTraining(MouseEvent.MOUSE_CLICKED);
-        if (isTrainingMode) {
-            if (!isCorrectKey(i)) {
-                stopTrainingWithError();
-            } else {
-                continueTraining();
-            }
-        }
-    }
-
-    @FXML
-    private void continueTraining() {
-        noteCounter++;
-        if (isLastKey()) {
-            stopTrainingWithCongratulations();
-        }
-    }
-
-    @FXML
-    private void stopTrainingWithError() {
-        isTrainingMode = false;
-        noteCounter = 0;
-        noteLine = "";
-        System.out.println("User pressed the wrong key");
-    }
-
-    @FXML
-    private void stopTrainingWithCongratulations() {
-        isTrainingMode = false;
-        noteCounter = 0;
-        noteLine = "";
-        System.out.println("Well done!");
-    }
-
-    @FXML
-    public void startTraining(EventType<MouseEvent> mouseEvent) {
-        Train.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent1 -> Notes.setText(str.toString()));
-        isTrainingMode = true;
-    }
-
-    @FXML
-    private boolean isCorrectKey(String i) {
-        //берет элемент из noteLine под номером noteCounter и сравнивает с поступившей "i"
-        for (int j = 0; j < str.length; j++) {
-            if (str[noteCounter].equals(i)) noteCounter++;
-            return true;
-        }
-        return false;
-    }
-
-    @FXML
-    private boolean isLastKey() {
-        //Смотрит чтобы noteCounter не выходил за размер noteLine
-
-        for (int i = 0; i < str.length; i++) {
-            if (i == str.length - 1)
-                return true;
-            else break;
-        }
-        return false;
-    }
 
 
-    String[] str = new String[]{"a", "c", "n"};
-
-
-    @FXML
-    public void initialize() {
-        Z.setOnAction(event -> pressNote("src/sample/music/Z.wav"));
-        X.setOnAction(event -> pressNote("src/sample/music/X.wav"));
-        C.setOnAction(event -> pressNote("src/sample/music/C.wav"));
-        V.setOnAction(event -> pressNote("src/sample/music/V.wav"));
-        B.setOnAction(event -> pressNote("src/sample/music/B.wav"));
-        A.setOnAction(event -> pressNote("src/sample/music/A.wav"));
-        S.setOnAction(event -> pressNote("src/sample/music/S.wav"));
-        D.setOnAction(event -> pressNote("src/sample/music/D.wav"));
-        F.setOnAction(event -> pressNote("src/sample/music/F.wav"));
-        G.setOnAction(event -> pressNote("src/sample/music/G.wav"));
-        Q.setOnAction(event -> pressNote("src/sample/music/Q.wav"));
-        W.setOnAction(event -> pressNote("src/sample/music/W.wav"));
-        E.setOnAction(event -> pressNote("src/sample/music/E.wav"));
-        R.setOnAction(event -> pressNote("src/sample/music/R.wav"));
-        T.setOnAction(event -> pressNote("src/sample/music/T.wav"));
-        Y.setOnAction(event -> pressNote("src/sample/music/Y.wav"));
-
-
-    }
 
 
 }
