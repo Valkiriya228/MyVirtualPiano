@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -22,12 +23,12 @@ public class Main extends Application  {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("piano.fxml"));
         primaryStage.setTitle("Virtual Piano");
-        Scene scene = (new Scene(root, 719, 630));
+        Scene scene = (new Scene(root, 1296, 630));
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
         Controller controller = new Controller();
-        scene.setOnKeyPressed(event -> {
+                scene.setOnKeyPressed(event -> {
             switch (event.getCode()) {
                 case Z:
                     controller.pressNote("src/sample/music/Z.wav");
@@ -110,6 +111,7 @@ public class Main extends Application  {
 
     public static void main(String[] args) {
         launch(args);
+
     }
 
 }

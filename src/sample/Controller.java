@@ -1,27 +1,24 @@
 package sample;
 
 
-import java.io.IOException;
-import java.io.*;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.Scanner;
 
-
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
-
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
+import java.awt.event.ActionEvent;
+import java.io.*;
+import java.net.URL;
+import java.util.*;
 
 
-
-
-public class Controller {
+public class Controller<event> {
     @FXML
     private ResourceBundle resources;
 
@@ -59,6 +56,9 @@ public class Controller {
     private Button file_button;
 
     @FXML
+    private Button Train;
+
+    @FXML
     private Button F;
 
     @FXML
@@ -66,6 +66,9 @@ public class Controller {
 
     @FXML
     private Button Q;
+
+    @FXML
+    public Label Notes;
 
     @FXML
     private Button W;
@@ -93,6 +96,12 @@ public class Controller {
     @FXML
     private Label error_label;
 
+    private boolean isTrainingMode = false;
+
+    private int noteCounter = 0;
+
+    private String noteLine = "";
+
 
     public void pressNote(String file) {
         Media music = new Media(new File(file).toURI().toString());
@@ -104,6 +113,7 @@ public class Controller {
         return fileField.getText();
     }
 
+
     public void playFromFile(String text) throws IOException, InterruptedException {
         FileReader fileReader = new FileReader(text);
         Scanner scanner = new Scanner(fileReader);
@@ -112,70 +122,87 @@ public class Controller {
             for (String i : scanner.nextLine().split(" ")) {
                 switch (i) {
                     case "z":
+                        checkIfTraining(i);
                         Z.fire();
                         break;
 
                     case "x":
+                        checkIfTraining(i);
                         X.fire();
                         break;
 
                     case "c":
+                        checkIfTraining(i);
                         C.fire();
                         break;
 
                     case "v":
+                        checkIfTraining(i);
                         V.fire();
                         break;
 
                     case "b":
+                        checkIfTraining(i);
                         B.fire();
                         break;
 
                     case "a":
+                        checkIfTraining(i);
                         A.fire();
                         break;
 
                     case "s":
+                        checkIfTraining(i);
                         S.fire();
                         break;
 
                     case "d":
+                        checkIfTraining(i);
                         D.fire();
                         break;
 
                     case "f":
+                        checkIfTraining(i);
                         F.fire();
                         break;
 
                     case "g":
+                        checkIfTraining(i);
                         G.fire();
                         break;
 
                     case "q":
+                        checkIfTraining(i);
                         Q.fire();
                         break;
 
                     case "w":
+                        checkIfTraining(i);
                         W.fire();
                         break;
 
                     case "e":
+                        checkIfTraining(i);
                         E.fire();
                         break;
 
                     case "r":
+                        checkIfTraining(i);
                         R.fire();
                         break;
 
                     case "t":
+                        checkIfTraining(i);
                         T.fire();
                         break;
 
                     case "y":
+                        checkIfTraining(i);
                         Y.fire();
                         break;
 
                     case "h":
+                        checkIfTraining(i);
                         H.fire();
                         break;
 
@@ -185,9 +212,83 @@ public class Controller {
             }
         }
         fileReader.close();
+        Train.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                Notes.setText(str.toString());
+            }
+        });
 
     }
 
+
+    @FXML
+    private void checkIfTraining(String i) {
+        startTraining(MouseEvent.MOUSE_CLICKED);
+        if (isTrainingMode) {
+            if (!isCorrectKey(i)) {
+                stopTrainingWithError();
+            } else {
+                continueTraining();
+            }
+        }
+    }
+
+    @FXML
+    private void continueTraining() {
+        noteCounter++;
+        if (isLastKey()) {
+            stopTrainingWithCongratulations();
+        }
+    }
+
+    @FXML
+    private void stopTrainingWithError() {
+        isTrainingMode = false;
+        noteCounter = 0;
+        noteLine = "";
+        System.out.println("User pressed the wrong key");
+    }
+
+    @FXML
+    private void stopTrainingWithCongratulations() {
+        isTrainingMode = false;
+        noteCounter = 0;
+        noteLine = "";
+        System.out.println("Well done!");
+    }
+
+    @FXML
+    public void startTraining(EventType<MouseEvent> mouseEvent) {
+        Train.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent1 -> Notes.setText(str.toString()));
+        isTrainingMode = true;
+    }
+
+    @FXML
+    private boolean isCorrectKey(String i) {
+        //берет элемент из noteLine под номером noteCounter и сравнивает с поступившей "i"
+        for (int j = 0; j < str.length; j++) {
+            if (str[noteCounter].equals(i)) noteCounter++;
+            return true;
+        }
+        return false;
+    }
+
+    @FXML
+    private boolean isLastKey() {
+        //Смотрит чтобы noteCounter не выходил за размер noteLine
+
+        for (int i = 0; i < str.length; i++) {
+            if (i == str.length - 1)
+                return true;
+            else break;
+        }
+        return false;
+    }
+
+
+    String[] str = new String[]{"a", "c", "n"};
 
 
     @FXML
@@ -211,4 +312,6 @@ public class Controller {
 
 
     }
+
+
 }
